@@ -6,6 +6,7 @@ import { P } from '@/components/P/P'
 import { Tag } from '@/components/Tag/Tag'
 import { useEffect, useState } from 'react'
 import Logo from '../public/vercel.svg'
+import { Rating } from '@/components/Rating/Rating'
 
 export default function Home() {
 	const [counter, setCounter] = useState<number>(0)
@@ -39,6 +40,9 @@ export default function Home() {
 			<Tag size='m' color='primary' href='#hello'>
 				Hello
 			</Tag>
+			<Rating rating={4} setRating={function (rating: number): void {
+				throw new Error('Function not implemented.')
+			} }></Rating>
 		</div>
 	)
 }
