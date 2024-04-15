@@ -10,12 +10,10 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
 	return (
 		<button
-			className={cn(
-				className,
-				styles.button,
-				{ [styles.primary]: appearance == 'primary' },
-				{ [styles.ghost]: appearance == 'ghost' }
-			)}
+			className={cn(className, styles.button, {
+				[styles.primary]: appearance == 'primary',
+				[styles.ghost]: appearance == 'ghost',
+			})}
 			{...props}>
 			{children}
 		</button>
