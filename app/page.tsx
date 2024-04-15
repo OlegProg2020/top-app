@@ -4,11 +4,23 @@ import { Button } from '@/components/Button/Button'
 import { Htag } from '@/components/Htag/Htag'
 import { P } from '@/components/P/P'
 import { Tag } from '@/components/Tag/Tag'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../public/vercel.svg'
 
 export default function Home() {
 	const [counter, setCounter] = useState<number>(0)
+
+	useEffect(() => {
+		console.log('счетчик: ' + counter)
+
+		return function cleanup() {
+			console.log('unmount')
+		}
+	})
+
+	useEffect(() => {
+		console.log('mounted')
+	}, [])
 
 	return (
 		<div>
