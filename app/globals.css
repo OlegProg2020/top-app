@@ -31,3 +31,7 @@ a {
 	--green-light: #1dc37e;
 	--font-family: 'Noto Sans', 'sans-serif';
 }
+
+.nav {
+	border: 1px solid green;
+}

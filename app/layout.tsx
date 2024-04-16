@@ -26,7 +26,16 @@ export default function RootLayout({
 					rel='stylesheet'
 				/>
 			</head>
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<nav className='nav'>
+					<ul>
+						<li>Курсы</li>
+						<li>Для детей</li>
+						<li>О нас</li>
+					</ul>
+				</nav>
+				{children}
+			</body>
 		</html>
 	)
 }
