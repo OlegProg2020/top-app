@@ -23,11 +23,16 @@ export const Rating = ({
 		const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
 			return (
 				<StarIcon
-					className={classNames(className, styles.star, {
-						[styles.filled]: i < currentRating,
-					})}
+					className={classNames(
+						className,
+						styles.star,
+						{ [styles.filled]: i < currentRating },
+						{ [styles.editable]: isEditable }
+					)}
 					key={i}
 					onMouseEnter={() => changeDisplay(i + 1)}
+					onMouseLeave={() => changeDisplay(rating)}
+					onClick={() => onClick(i + 1)}
 				/>
 			)
 		})
@@ -35,7 +40,17 @@ export const Rating = ({
 	}
 
 	const changeDisplay = (i: number) => {
-		
+		if (!isEditable) {
+			return
+		}
+		constructRating(i)
+	}
+
+	const onClick = (i: number) => {
+		if (!isEditable || !setRating) {
+			return
+		}
+		setRating(i)
 	}
 
 	return (
